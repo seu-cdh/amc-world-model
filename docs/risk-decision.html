@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AMC 至善车队核心技术：风险感知混合专家决策。">
+  <meta name="theme-color" content="#f5f6f8">
+  <title>风险感知混合专家决策｜AMC 至善车队</title>
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20261014">
+</head>
+<body>
+  <header class="site-header"><div class="nav-container"><a class="brand" href="./index.html" aria-label="返回项目首页">AMC <span>至善车队</span></a><nav class="nav-links" aria-label="页面导航"><a href="./index.html#overview">项目简介</a><a href="./index.html#modules">核心技术</a><a href="./index.html#results">仿真与验证</a><a href="./index.html#demos">场景展示</a></nav></div></header>
+  <main class="page-container detail-page">
+    <article class="content-panel detail-panel">
+      <a class="back-link" href="./index.html#modules">← 返回核心技术体系</a>
+      <div class="detail-intro"><span class="eyebrow">03 / RISK-AWARE DECISION</span><h1>风险感知混合专家决策</h1><p>由不同时间尺度的学习专家与规则安全专家提出候选行为，结合世界模型的未来推演结果，完成风险约束下的轨迹选择与滚动控制。</p></div>
+      <figure class="detail-figure"><img src="./assets/figures/expert-decision.png" alt="风险感知专家路由示意" loading="eager"><figcaption>风险感知专家路由示意</figcaption></figure>
+      <div class="detail-sections"><section class="detail-block"><h2>分工明确的候选策略</h2><p>长时学习专家关注连续任务收益，短时记忆专家处理局部交互，规则安全专家提供安全约束。风险感知路由根据当前状态组织候选行为。</p></section><section class="detail-block"><h2>面向未来的风险评估</h2><p>世界模型对不同候选行为进行并行推演，综合通行收益、碰撞风险和约束代价评估其后果，避免只依据当前瞬时状态做出选择。</p></section><section class="detail-block"><h2>轨迹筛选与控制</h2><p>在候选行为基础上优化可执行轨迹，并按风险预算筛选。车辆执行短时控制后重新感知环境，形成滚动闭环。</p></section></div>
+
+      <div class="detail-return"><a class="resource-button" href="./index.html#modules">返回核心技术体系 <span aria-hidden="true">→</span></a></div>
+    </article>
+  </main>
+  <footer class="site-footer"><span>AMC 至善车队 · 世界模型驱动的端到端自动驾驶</span><a href="./index.html">项目首页 ↑</a></footer>
+</body>
+</html>

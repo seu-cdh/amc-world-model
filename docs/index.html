@@ -7,14 +7,14 @@
   <meta name="theme-color" content="#f5f6f8">
   <title>世界模型驱动的端到端自动驾驶｜AMC 至善车队</title>
   <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css?v=20261013-2">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20261014">
 </head>
 <body>
   <header class="site-header">
     <div class="nav-container">
       <a class="brand" href="#top" aria-label="返回页面顶部">AMC <span>至善车队</span></a>
       <nav class="nav-links" aria-label="页面导航">
-        <a href="#overview">项目简介</a><a href="#modules">核心技术</a><a href="#results">验证结果</a><a href="#demos">演示视频</a>
+        <a href="#overview">项目简介</a><a href="#modules">核心技术</a><a href="#results">仿真与验证</a><a href="#demos">场景展示</a>
       </nav>
     </div>
   </header>
@@ -24,18 +24,14 @@
       <div class="hero-copy">
         <p class="project-label">第八届中国研究生人工智能创新大赛 · AMC 至善车队</p>
         <h1 id="project-title">世界模型驱动的端到端自动驾驶<br>闭环决策控制技术研发</h1>
-      </div>
-      <div class="hero-video-wrap">
-        <video class="hero-video" autoplay muted loop playsinline controls preload="metadata" aria-label="MetaDrive 强化学习长轨迹规划完整演示"><source src="./assets/gifs/video/metadrive-long-horizon.mp4" type="video/mp4">您的浏览器暂不支持视频播放。</video>
-      </div>
-      <div class="hero-footer">
-        <p class="video-caption">MetaDrive 强化学习长轨迹规划 · 完整演示</p>
-        <p class="hero-summary">面向复杂交通环境的未来状态推演、长尾风险场景生成与实时安全决策。</p>
+        <p class="hero-summary">面向复杂交通环境，融合未来状态推演、长尾风险场景生成与风险感知决策，构建可持续迭代的自动驾驶闭环技术体系。</p>
         <div class="hero-actions">
-          <a class="resource-button primary" href="#modules">了解核心技术 <span aria-hidden="true">↗</span></a>
+          <a class="resource-button primary" href="#modules">了解核心技术 <span aria-hidden="true">→</span></a>
           <a class="resource-button" href="#results">查看验证结果</a>
         </div>
       </div>
+      <div class="hero-video-wrap"><video class="hero-video" controls playsinline preload="metadata" aria-label="项目总展示介绍视频"><source src="./assets/gifs/project-overview.mp4" type="video/mp4">您的浏览器暂不支持视频播放。</video></div>
+      <p class="hero-video-caption">项目总展示 · 世界模型驱动的自动驾驶闭环决策控制</p>
     </section>
 
     <section class="content-panel" id="overview" aria-labelledby="overview-title">
@@ -54,35 +50,46 @@
     <section class="content-panel" id="modules" aria-labelledby="modules-title">
       <div class="section-heading"><span class="eyebrow">THREE CORE MODULES</span><h2 id="modules-title">核心技术体系</h2><p>多模态世界模型、极端场景训测闭环与风险感知混合专家决策构成协同架构。</p></div>
       <div class="module-list">
-        <article class="module-card"><div class="module-text"><span class="module-number">01 / WORLD MODEL</span><h3>物理约束的多模态世界模型</h3><p>融合视觉、激光雷达、车辆状态与道路信息，以循环状态空间模型建立连续表征；将车辆运动规律、道路边界和安全约束融入扩散推演，让预测更贴近真实驾驶条件。</p><div class="keyword-row"><span>多模态融合</span><span>时序推演</span><span>物理一致性</span></div></div><figure><img src="./assets/figures/world-model.png" alt="多模态输入、潜在状态推演及闭环控制组成的世界模型架构" loading="lazy"><figcaption>多模态世界模型架构</figcaption></figure></article>
-        <article class="module-card"><div class="module-text"><span class="module-number">02 / SCENARIO LOOP</span><h3>极端场景生成与训测闭环</h3><p>依据策略的决策边界生成高价值交互场景，将闭环测试暴露的关键失效片段回流训练。场景随模型能力变化持续更新，形成“生成—测试—反馈—更新”的迭代机制。</p><div class="keyword-row"><span>决策边界</span><span>长尾风险</span><span>反馈更新</span></div></div><figure><img src="./assets/figures/scenario-branches.png" alt="交通场景从常规状态演变为复杂交互的多分支示意" loading="lazy"><figcaption>多分支场景推演示意</figcaption></figure></article>
-        <article class="module-card"><div class="module-text"><span class="module-number">03 / RISK-AWARE DECISION</span><h3>风险感知混合专家决策</h3><p>长时学习、短时记忆与规则安全专家并行生成候选行为。世界模型预估未来收益与风险，再由混合高斯轨迹优化筛选可行方案，支持滚动决策与控制。</p><div class="keyword-row"><span>混合专家</span><span>风险筛选</span><span>轨迹优化</span></div></div><figure><img src="./assets/figures/expert-decision.png" alt="风险路由选择不同驾驶专家并结合世界模型评估候选行为" loading="lazy"><figcaption>风险感知专家路由示意</figcaption></figure></article>
+        <article class="module-card"><div class="module-text"><span class="module-number">01 / WORLD MODEL</span><h3>物理约束的多模态世界模型</h3><p>融合视觉、激光雷达、车辆状态与道路信息，以循环状态空间模型建立连续表征；将车辆运动规律、道路边界和安全约束融入扩散推演，让预测更贴近真实驾驶条件。</p><div class="keyword-row"><span>多模态融合</span><span>时序推演</span><span>物理一致性</span></div><a class="module-link" href="./world-model.html">查看技术详情 <span aria-hidden="true">→</span></a></div><figure><img src="./assets/figures/world-model.png" alt="多模态输入、潜在状态推演及闭环控制组成的世界模型架构" loading="lazy"><figcaption>多模态世界模型架构</figcaption></figure></article>
+        <article class="module-card"><div class="module-text"><span class="module-number">02 / SCENARIO LOOP</span><h3>极端场景生成与训测闭环</h3><p>依据策略的决策边界生成高价值交互场景，将闭环测试暴露的关键失效片段回流训练。场景随模型能力变化持续更新，形成“生成—测试—反馈—更新”的迭代机制。</p><div class="keyword-row"><span>决策边界</span><span>长尾风险</span><span>反馈更新</span></div><a class="module-link" href="./scenario-loop.html">查看技术详情与对比演示 <span aria-hidden="true">→</span></a></div><figure><img src="./assets/figures/scenario-branches.png" alt="交通场景从常规状态演变为复杂交互的多分支示意" loading="lazy"><figcaption>多分支场景推演示意</figcaption></figure></article>
+        <article class="module-card"><div class="module-text"><span class="module-number">03 / RISK-AWARE DECISION</span><h3>风险感知混合专家决策</h3><p>长时学习、短时记忆与规则安全专家并行生成候选行为。世界模型预估未来收益与风险，再由混合高斯轨迹优化筛选可行方案，支持滚动决策与控制。</p><div class="keyword-row"><span>混合专家</span><span>风险筛选</span><span>轨迹优化</span></div><a class="module-link" href="./risk-decision.html">查看技术详情 <span aria-hidden="true">→</span></a></div><figure><img src="./assets/figures/expert-decision.png" alt="风险路由选择不同驾驶专家并结合世界模型评估候选行为" loading="lazy"><figcaption>风险感知专家路由示意</figcaption></figure></article>
       </div>
     </section>
 
     <section class="content-panel" id="results" aria-labelledby="results-title">
-      <div class="section-heading"><span class="eyebrow">VALIDATION</span><h2 id="results-title">仿真与实车验证</h2><p>覆盖仿真平台、硬件在环与低速无人车的分层验证。</p></div>
-      <div class="result-grid"><div class="result-card"><strong>3</strong><span>类仿真与数据平台</span><p>Highway-Env、MetaDrive、nuPlan，覆盖高速交互、开放道路仿真与真实驾驶数据回放。</p></div><div class="result-card"><strong>闭环</strong><span>软硬件验证</span><p>完成仿真、硬件在环及低速无人车测试，覆盖绕障、超车回道和动态交互避让。</p></div><div class="result-card"><strong>全国第三名</strong><span>OnSite 自动驾驶算法挑战赛</span><p>相关方法已应用于自动驾驶算法挑战赛，成绩见项目文档。</p></div></div>
-      <figure class="result-chart"><img src="./assets/figures/training-curves.png" alt="混合专家强化学习策略与对照方法的训练曲线" loading="lazy"><figcaption>混合专家策略训练对比曲线 · 见项目文档</figcaption></figure>
+      <div class="section-heading"><span class="eyebrow">VALIDATION</span><h2 id="results-title">仿真与实车验证</h2><p>在仿真平台、硬件在环与低速无人车平台上验证场景适应性和闭环运行能力。</p></div>
+      <div class="result-grid">
+        <div class="result-card"><h3>多平台仿真评估</h3><p>在 Highway-Env、MetaDrive 与 nuPlan 中开展交通交互、长轨迹规划及真实驾驶数据回放测试。</p></div>
+        <div class="result-card"><h3>闭环运行验证</h3><p>结合硬件在环及低速无人车道路测试，评估绕障、超车回道和动态交互避让等任务。</p></div>
+        <div class="result-card"><h3>竞赛验证</h3><p>相关方法参加 OnSite 自动驾驶算法挑战赛，取得全国第三名。</p></div>
+      </div>
+      <div class="result-visuals">
+        <figure><img src="./assets/figures/training-curves.png" alt="混合专家强化学习策略与对照方法的训练曲线" loading="lazy"><figcaption>混合专家策略训练对比曲线 · 见项目文档</figcaption></figure>
+        <figure><img src="./assets/figures/road-test.png" alt="低速无人车道路测试画面与轨迹" loading="lazy"><figcaption>低速无人车道路测试</figcaption></figure>
+      </div>
     </section>
 
     <section class="content-panel" id="demos" aria-labelledby="demos-title">
-      <div class="section-heading"><span class="eyebrow">EXPERIMENT VISUALIZATION</span><h2 id="demos-title">实验可视化与实车演示</h2><p>对抗场景生成、视角场景仿真及车辆闭环运行的代表性片段。</p></div>
+      <div class="section-heading"><span class="eyebrow">EXPERIMENT VISUALIZATION</span><h2 id="demos-title">场景仿真与实车演示</h2><p>展示复杂交通场景中的交互工况、多视角仿真及车辆运行片段。</p></div>
 
       <div class="demo-group">
-        <div class="demo-group-heading"><span class="demo-index">01</span><div><h3>对抗场景生成可视化</h3><p>原始场景回放与对抗生成结果并列展示。</p></div></div>
-        <div class="scenario-case"><h4>场景一</h4><div class="scenario-pair"><figure class="media-card"><img src="./assets/gifs/scenario_demo_03_logged.gif" alt="场景一原始交通回放" loading="lazy"><figcaption>原始场景</figcaption></figure><figure class="media-card"><img src="./assets/gifs/scenario_demo_03_generated.gif" alt="场景一对抗生成结果" loading="lazy"><figcaption>对抗生成场景</figcaption></figure></div></div>
-        <div class="scenario-case"><h4>场景二</h4><div class="scenario-pair"><figure class="media-card"><img src="./assets/gifs/scenario_demo_05_logged.gif" alt="场景二原始交通回放" loading="lazy"><figcaption>原始场景</figcaption></figure><figure class="media-card"><img src="./assets/gifs/scenario_demo_05_generated.gif" alt="场景二对抗生成结果" loading="lazy"><figcaption>对抗生成场景</figcaption></figure></div></div>
+        <div class="demo-group-heading"><span class="demo-index">01</span><div><h3>复杂交通场景可视化</h3><p>覆盖多车道、路口、交汇区域及湿滑路面等不同交通条件。</p></div></div>
+        <div class="real-scene-grid">
+          <figure class="media-card"><img src="./assets/gifs/real_video_1.gif" alt="多车道车流中的自动驾驶交通场景" loading="lazy"><figcaption>多车道车流交互</figcaption></figure>
+          <figure class="media-card"><img src="./assets/gifs/real_video_2.gif" alt="路口车辆交互场景" loading="lazy"><figcaption>路口车辆交互</figcaption></figure>
+          <figure class="media-card"><img src="./assets/gifs/real_video_3.gif" alt="道路交汇区域的车辆交互场景" loading="lazy"><figcaption>道路交汇区域</figcaption></figure>
+          <figure class="media-card"><img src="./assets/gifs/real_video_4.gif" alt="湿滑路面上的车辆交互场景" loading="lazy"><figcaption>湿滑路面工况</figcaption></figure>
+        </div>
       </div>
 
       <div class="demo-group">
-        <div class="demo-group-heading"><span class="demo-index">02</span><div><h3>视角场景仿真</h3><p>多视角画面与道路场景同步展示。</p></div></div>
+        <div class="demo-group-heading"><span class="demo-index">02</span><div><h3>多视角场景仿真</h3><p>多视角画面与道路场景同步展示。</p></div></div>
         <div class="simulation-grid"><figure class="media-card"><img src="./assets/gifs/video/multi-view-1.gif" alt="多视角场景仿真第一组" loading="lazy"><figcaption>多视角场景一</figcaption></figure><figure class="media-card"><img src="./assets/gifs/video/multi-view-2.gif" alt="多视角场景仿真第二组" loading="lazy"><figcaption>多视角场景二</figcaption></figure></div>
       </div>
 
       <div class="demo-group">
-        <div class="demo-group-heading"><span class="demo-index">03</span><div><h3>实车演示</h3><p>道路测试画面与车辆运行视频。</p></div></div>
-        <div class="vehicle-grid"><figure class="media-card"><img src="./assets/figures/road-test.png" alt="低速无人车道路测试画面与轨迹" loading="lazy"><figcaption>低速无人车道路测试</figcaption></figure><figure class="media-card"><video controls playsinline preload="none" aria-label="实车自动驾驶闭环演示"><source src="./assets/gifs/video/aion-vehicle-demo.mp4" type="video/mp4"></video><figcaption>实车闭环驾驶</figcaption></figure><figure class="media-card"><video controls playsinline preload="none" aria-label="车辆正面视角演示"><source src="./assets/gifs/video/postal-front.mp4" type="video/mp4"></video><figcaption>车辆运行 · 正面视角</figcaption></figure><figure class="media-card"><video controls playsinline preload="none" aria-label="车辆背面视角演示"><source src="./assets/gifs/video/postal-rear.mp4" type="video/mp4"></video><figcaption>车辆运行 · 背面视角</figcaption></figure></div>
+        <div class="demo-group-heading"><span class="demo-index">03</span><div><h3>实车运行演示</h3><p>实车闭环驾驶及低速无人车不同视角的运行视频。</p></div></div>
+        <div class="vehicle-grid"><figure class="media-card vehicle-featured"><video controls playsinline preload="none" aria-label="实车自动驾驶闭环演示"><source src="./assets/gifs/video/aion-vehicle-demo.mp4" type="video/mp4"></video><figcaption>实车闭环驾驶</figcaption></figure><figure class="media-card"><video controls playsinline preload="none" aria-label="车辆正面视角演示"><source src="./assets/gifs/video/postal-front.mp4" type="video/mp4"></video><figcaption>车辆运行 · 正面视角</figcaption></figure><figure class="media-card"><video controls playsinline preload="none" aria-label="车辆背面视角演示"><source src="./assets/gifs/video/postal-rear.mp4" type="video/mp4"></video><figcaption>车辆运行 · 背面视角</figcaption></figure></div>
       </div>
     </section>
   </main>

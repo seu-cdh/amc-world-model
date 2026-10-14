@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AMC 至善车队核心技术：极端场景生成与训测闭环。">
+  <meta name="theme-color" content="#f5f6f8">
+  <title>极端场景生成与训测闭环｜AMC 至善车队</title>
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20261014">
+</head>
+<body>
+  <header class="site-header"><div class="nav-container"><a class="brand" href="./index.html" aria-label="返回项目首页">AMC <span>至善车队</span></a><nav class="nav-links" aria-label="页面导航"><a href="./index.html#overview">项目简介</a><a href="./index.html#modules">核心技术</a><a href="./index.html#results">仿真与验证</a><a href="./index.html#demos">场景展示</a></nav></div></header>
+  <main class="page-container detail-page">
+    <article class="content-panel detail-panel">
+      <a class="back-link" href="./index.html#modules">← 返回核心技术体系</a>
+      <div class="detail-intro"><span class="eyebrow">02 / SCENARIO LOOP</span><h1>极端场景生成与训测闭环</h1><p>围绕当前驾驶策略的薄弱决策边界，生成具备明确交互压力的场景，并将测试失效反馈到训练过程，提升长尾风险覆盖。</p></div>
+      <figure class="detail-figure"><img src="./assets/figures/scenario-branches.png" alt="交通场景多分支推演示意" loading="eager"><figcaption>交通场景多分支推演示意</figcaption></figure>
+      <div class="detail-sections"><section class="detail-block"><h2>决策边界引导生成</h2><p>从真实或记录场景出发，调整周边交通参与者的行为与交互时序，在交通规则和物理可行性约束下形成有针对性的测试场景。</p></section><section class="detail-block"><h2>测试反馈与持续更新</h2><p>闭环测试识别碰撞风险、策略犹豫及不稳定动作等关键失效片段，将其回流训练。随着策略能力变化，场景库持续补充新的高价值样本。</p></section></div>
+      <section class="detail-gallery" aria-labelledby="scenario-gallery-title"><div class="section-heading"><span class="eyebrow">SCENARIO COMPARISON</span><h2 id="scenario-gallery-title">对抗场景生成可视化</h2><p>记录场景与针对性生成场景的两组对比。</p></div>
+          <div class="scenario-case"><h3>场景一</h3><div class="scenario-pair"><figure class="media-card"><img src="./assets/gifs/scenario_demo_03_logged.gif" alt="第一组记录场景回放" loading="lazy"><figcaption>记录场景</figcaption></figure><figure class="media-card"><img src="./assets/gifs/scenario_demo_03_generated.gif" alt="第一组对抗生成场景" loading="lazy"><figcaption>对抗生成场景</figcaption></figure></div></div>
+          <div class="scenario-case"><h3>场景二</h3><div class="scenario-pair"><figure class="media-card"><img src="./assets/gifs/scenario_demo_05_logged.gif" alt="第二组记录场景回放" loading="lazy"><figcaption>记录场景</figcaption></figure><figure class="media-card"><img src="./assets/gifs/scenario_demo_05_generated.gif" alt="第二组对抗生成场景" loading="lazy"><figcaption>对抗生成场景</figcaption></figure></div></div>
+        </section>
+      <div class="detail-return"><a class="resource-button" href="./index.html#modules">返回核心技术体系 <span aria-hidden="true">→</span></a></div>
+    </article>
+  </main>
+  <footer class="site-footer"><span>AMC 至善车队 · 世界模型驱动的端到端自动驾驶</span><a href="./index.html">项目首页 ↑</a></footer>
+</body>
+</html>
