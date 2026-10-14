@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f5f6f8">
   <title>极端场景生成与训测闭环｜AMC 至善车队</title>
   <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css?v=20261014">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20261014-2">
 </head>
 <body>
   <header class="site-header"><div class="nav-container"><a class="brand" href="./index.html" aria-label="返回项目首页">AMC <span>至善车队</span></a><nav class="nav-links" aria-label="页面导航"><a href="./index.html#overview">项目简介</a><a href="./index.html#modules">核心技术</a><a href="./index.html#results">仿真与验证</a><a href="./index.html#demos">场景展示</a></nav></div></header>
@@ -17,6 +17,10 @@
       <div class="detail-intro"><span class="eyebrow">02 / SCENARIO LOOP</span><h1>极端场景生成与训测闭环</h1><p>围绕当前驾驶策略的薄弱决策边界，生成具备明确交互压力的场景，并将测试失效反馈到训练过程，提升长尾风险覆盖。</p></div>
       <figure class="detail-figure"><img src="./assets/figures/scenario-branches.png" alt="交通场景多分支推演示意" loading="eager"><figcaption>交通场景多分支推演示意</figcaption></figure>
       <div class="detail-sections"><section class="detail-block"><h2>决策边界引导生成</h2><p>从真实或记录场景出发，调整周边交通参与者的行为与交互时序，在交通规则和物理可行性约束下形成有针对性的测试场景。</p></section><section class="detail-block"><h2>测试反馈与持续更新</h2><p>闭环测试识别碰撞风险、策略犹豫及不稳定动作等关键失效片段，将其回流训练。随着策略能力变化，场景库持续补充新的高价值样本。</p></section></div>
+      <section class="method-section" aria-labelledby="scenario-method-title">
+        <div class="method-copy"><span class="eyebrow">KEY MECHANISM</span><h2 id="scenario-method-title">以决策变化筛选高价值场景</h2><p>世界模型从记录场景出发，在车辆运动与道路规则允许的范围内改变周车行为。若较小扰动引起驾驶策略明显变化，该分支便更接近当前策略的决策边界，可优先进入闭环测试。</p><p>测试记录完整的状态、动作与安全代价序列，定位关键失效时刻并回流训练。更新后的策略再接受新一轮场景挑战，使测试难度随策略能力逐步调整。</p></div>
+        <div class="equation-panel"><span class="equation-label">局部决策敏感度</span><div class="formula" role="math" aria-label="S t 等于扰动前后策略动作差的二范数，除以扰动二范数加 epsilon">S<sub>t</sub> = ‖π<sub>θ</sub>(z<sub>t</sub><sup>δ</sup>) − π<sub>θ</sub>(z<sub>t</sub>)‖<sub>2</sub> / (‖δ<sub>t</sub>‖<sub>2</sub> + ε)</div><p>分子衡量策略输出变化，分母控制扰动幅度。敏感度高的场景还需通过物理可行性与闭环挑战度检验。</p></div>
+      </section>
       <section class="detail-gallery" aria-labelledby="scenario-gallery-title"><div class="section-heading"><span class="eyebrow">SCENARIO COMPARISON</span><h2 id="scenario-gallery-title">对抗场景生成可视化</h2><p>记录场景与针对性生成场景的两组对比。</p></div>
           <div class="scenario-case"><h3>场景一</h3><div class="scenario-pair"><figure class="media-card"><img src="./assets/gifs/scenario_demo_03_logged.gif" alt="第一组记录场景回放" loading="lazy"><figcaption>记录场景</figcaption></figure><figure class="media-card"><img src="./assets/gifs/scenario_demo_03_generated.gif" alt="第一组对抗生成场景" loading="lazy"><figcaption>对抗生成场景</figcaption></figure></div></div>
           <div class="scenario-case"><h3>场景二</h3><div class="scenario-pair"><figure class="media-card"><img src="./assets/gifs/scenario_demo_05_logged.gif" alt="第二组记录场景回放" loading="lazy"><figcaption>记录场景</figcaption></figure><figure class="media-card"><img src="./assets/gifs/scenario_demo_05_generated.gif" alt="第二组对抗生成场景" loading="lazy"><figcaption>对抗生成场景</figcaption></figure></div></div>

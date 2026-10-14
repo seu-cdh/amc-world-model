@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f5f6f8">
   <title>风险感知混合专家决策｜AMC 至善车队</title>
   <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css?v=20261014">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20261014-2">
 </head>
 <body>
   <header class="site-header"><div class="nav-container"><a class="brand" href="./index.html" aria-label="返回项目首页">AMC <span>至善车队</span></a><nav class="nav-links" aria-label="页面导航"><a href="./index.html#overview">项目简介</a><a href="./index.html#modules">核心技术</a><a href="./index.html#results">仿真与验证</a><a href="./index.html#demos">场景展示</a></nav></div></header>
@@ -17,6 +17,11 @@
       <div class="detail-intro"><span class="eyebrow">03 / RISK-AWARE DECISION</span><h1>风险感知混合专家决策</h1><p>由不同时间尺度的学习专家与规则安全专家提出候选行为，结合世界模型的未来推演结果，完成风险约束下的轨迹选择与滚动控制。</p></div>
       <figure class="detail-figure"><img src="./assets/figures/expert-decision.png" alt="风险感知专家路由示意" loading="eager"><figcaption>风险感知专家路由示意</figcaption></figure>
       <div class="detail-sections"><section class="detail-block"><h2>分工明确的候选策略</h2><p>长时学习专家关注连续任务收益，短时记忆专家处理局部交互，规则安全专家提供安全约束。风险感知路由根据当前状态组织候选行为。</p></section><section class="detail-block"><h2>面向未来的风险评估</h2><p>世界模型对不同候选行为进行并行推演，综合通行收益、碰撞风险和约束代价评估其后果，避免只依据当前瞬时状态做出选择。</p></section><section class="detail-block"><h2>轨迹筛选与控制</h2><p>在候选行为基础上优化可执行轨迹，并按风险预算筛选。车辆执行短时控制后重新感知环境，形成滚动闭环。</p></section></div>
+      <section class="method-section" aria-labelledby="decision-method-title">
+        <div class="method-copy"><span class="eyebrow">KEY MECHANISM</span><h2 id="decision-method-title">保留多种可行驾驶模式</h2><p>专家路由分配候选采样比例，世界模型对各动作序列并行推演。系统先剔除累计安全代价超过风险预算的轨迹，再从可行候选中选取收益较高的样本继续优化。</p><p>高斯混合分布分别保留跟驰、换道、超车和让行等行为分支，避免将不同策略平均为不合理的折中动作。每次只执行最优序列的首个动作，下一周期据新观测重新规划。</p></div>
+        <div class="equation-panel"><span class="equation-label">多峰候选动作分布</span><div class="formula" role="math" aria-label="q a 等于从 m 等于一到 M 的求和，pi m 乘以均值 mu m 协方差 Sigma m 的高斯分布">q(a) = ∑<sub>m=1</sub><sup>M</sup> π<sub>m</sub> 𝒩(a | μ<sub>m</sub>, Σ<sub>m</sub>)</div><p>每个高斯分量表示一类候选动作模式；其权重和分布参数由风险筛选后的优选轨迹迭代更新。</p></div>
+      </section>
+      <figure class="detail-support-figure"><img src="./assets/figures/closed-loop-pipeline.png" alt="专家候选分配、世界模型轨迹推演、约束筛选与高斯混合优化流程" loading="lazy"><figcaption>混合专家并行推演与多峰轨迹优化流程</figcaption></figure>
 
       <div class="detail-return"><a class="resource-button" href="./index.html#modules">返回核心技术体系 <span aria-hidden="true">→</span></a></div>
     </article>

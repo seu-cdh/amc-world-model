@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f5f6f8">
   <title>世界模型驱动的端到端自动驾驶｜AMC 至善车队</title>
   <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css?v=20261014">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20261014-2">
 </head>
 <body>
   <header class="site-header">
@@ -51,7 +51,7 @@
       <div class="section-heading"><span class="eyebrow">THREE CORE MODULES</span><h2 id="modules-title">核心技术体系</h2><p>多模态世界模型、极端场景训测闭环与风险感知混合专家决策构成协同架构。</p></div>
       <div class="module-list">
         <article class="module-card"><div class="module-text"><span class="module-number">01 / WORLD MODEL</span><h3>物理约束的多模态世界模型</h3><p>融合视觉、激光雷达、车辆状态与道路信息，以循环状态空间模型建立连续表征；将车辆运动规律、道路边界和安全约束融入扩散推演，让预测更贴近真实驾驶条件。</p><div class="keyword-row"><span>多模态融合</span><span>时序推演</span><span>物理一致性</span></div><a class="module-link" href="./world-model.html">查看技术详情 <span aria-hidden="true">→</span></a></div><figure><img src="./assets/figures/world-model.png" alt="多模态输入、潜在状态推演及闭环控制组成的世界模型架构" loading="lazy"><figcaption>多模态世界模型架构</figcaption></figure></article>
-        <article class="module-card"><div class="module-text"><span class="module-number">02 / SCENARIO LOOP</span><h3>极端场景生成与训测闭环</h3><p>依据策略的决策边界生成高价值交互场景，将闭环测试暴露的关键失效片段回流训练。场景随模型能力变化持续更新，形成“生成—测试—反馈—更新”的迭代机制。</p><div class="keyword-row"><span>决策边界</span><span>长尾风险</span><span>反馈更新</span></div><a class="module-link" href="./scenario-loop.html">查看技术详情与对比演示 <span aria-hidden="true">→</span></a></div><figure><img src="./assets/figures/scenario-branches.png" alt="交通场景从常规状态演变为复杂交互的多分支示意" loading="lazy"><figcaption>多分支场景推演示意</figcaption></figure></article>
+        <article class="module-card"><div class="module-text"><span class="module-number">02 / SCENARIO LOOP</span><h3>极端场景生成与训测闭环</h3><p>依据策略的决策边界生成高价值交互场景，将闭环测试暴露的关键失效片段回流训练。场景随模型能力变化持续更新，形成“生成—测试—反馈—更新”的迭代机制。</p><div class="keyword-row"><span>决策边界</span><span>长尾风险</span><span>反馈更新</span></div><a class="module-link" href="./scenario-loop.html">查看技术详情 <span aria-hidden="true">→</span></a></div><figure><img src="./assets/figures/scenario-branches.png" alt="交通场景从常规状态演变为复杂交互的多分支示意" loading="lazy"><figcaption>多分支场景推演示意</figcaption></figure></article>
         <article class="module-card"><div class="module-text"><span class="module-number">03 / RISK-AWARE DECISION</span><h3>风险感知混合专家决策</h3><p>长时学习、短时记忆与规则安全专家并行生成候选行为。世界模型预估未来收益与风险，再由混合高斯轨迹优化筛选可行方案，支持滚动决策与控制。</p><div class="keyword-row"><span>混合专家</span><span>风险筛选</span><span>轨迹优化</span></div><a class="module-link" href="./risk-decision.html">查看技术详情 <span aria-hidden="true">→</span></a></div><figure><img src="./assets/figures/expert-decision.png" alt="风险路由选择不同驾驶专家并结合世界模型评估候选行为" loading="lazy"><figcaption>风险感知专家路由示意</figcaption></figure></article>
       </div>
     </section>

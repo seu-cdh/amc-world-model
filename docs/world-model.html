@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f5f6f8">
   <title>物理约束的多模态世界模型｜AMC 至善车队</title>
   <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/css/style.css?v=20261014">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20261014-2">
 </head>
 <body>
   <header class="site-header"><div class="nav-container"><a class="brand" href="./index.html" aria-label="返回项目首页">AMC <span>至善车队</span></a><nav class="nav-links" aria-label="页面导航"><a href="./index.html#overview">项目简介</a><a href="./index.html#modules">核心技术</a><a href="./index.html#results">仿真与验证</a><a href="./index.html#demos">场景展示</a></nav></div></header>
@@ -17,6 +17,10 @@
       <div class="detail-intro"><span class="eyebrow">01 / WORLD MODEL</span><h1>物理约束的多模态世界模型</h1><p>将多源感知信息压缩为可推演的潜在状态，并在未来状态生成中引入车辆运动与道路安全约束，为后续规划提供一致的环境表征。</p></div>
       <figure class="detail-figure"><img src="./assets/figures/world-model.png" alt="多模态世界模型架构" loading="eager"><figcaption>多模态世界模型架构</figcaption></figure>
       <div class="detail-sections"><section class="detail-block"><h2>多模态时空表征</h2><p>联合建模多视角视觉、激光雷达、车辆状态和道路拓扑，提取交通参与者与道路结构信息。循环状态空间模型在潜在空间中保持跨时刻的一致性，为连续推演提供状态基础。</p></section><section class="detail-block"><h2>物理先验约束推演</h2><p>扩散生成过程结合车辆运动学、道路边界和安全约束，对多主体未来状态进行条件推演。模型在表达复杂交互变化的同时，约束不合理运动和越界轨迹。</p></section><section class="detail-block"><h2>服务闭环决策</h2><p>决策模块可以在潜在空间中评估候选行为的未来后果，将预测结果转化为轨迹收益与风险判断，并随新的观测滚动更新。</p></section></div>
+      <section class="method-section" aria-labelledby="world-method-title">
+        <div class="method-copy"><span class="eyebrow">KEY MECHANISM</span><h2 id="world-method-title">连续控制与物理一致性</h2><p>世界模型在潜在空间中递推未来状态，并用残差动作表达相邻控制周期的变化。这样，零残差对应保持上一时刻动作，便于生成连续的转向和加减速序列。</p><p>生成轨迹还接受速度、加速度变化、道路边界及安全时距等约束校验；当多次推演结果分歧增大时，系统可缩短推演时域并结合真实观测修正预测。</p></div>
+        <div class="equation-panel"><span class="equation-label">残差动作更新</span><div class="formula" role="math" aria-label="a t 等于 tanh 括号 atanh a t减一 加 delta u t 括号">a<sub>t</sub> = tanh(atanh(a<sub>t−1</sub>) + Δu<sub>t</sub>)</div><p>a<sub>t−1</sub> 为上一控制动作，Δu<sub>t</sub> 为潜空间中的动作增量。约束作用于推演轨迹，而非只检查单帧状态。</p></div>
+      </section>
 
       <div class="detail-return"><a class="resource-button" href="./index.html#modules">返回核心技术体系 <span aria-hidden="true">→</span></a></div>
     </article>

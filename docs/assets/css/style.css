@@ -120,6 +120,17 @@ section{scroll-margin-top:84px}
 .detail-gallery{margin-top:42px;padding-top:32px;border-top:1px solid var(--line)}
 .detail-gallery .scenario-case h3{margin:0 0 10px;font-size:.95rem}
 .detail-return{margin-top:36px}
+.method-section{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:30px;align-items:center;margin-top:36px;padding:30px 32px;border:1px solid #dfe8f5;border-radius:5px;background:linear-gradient(135deg,#f9fbff 0%,#f2f6fc 100%)}
+.method-copy h2{margin-top:5px;font-size:1.22rem;line-height:1.4}
+.method-copy p{margin-top:12px;color:var(--body);font-size:.88rem;line-height:1.85}
+.equation-panel{min-width:0;padding:22px 23px;border:1px solid #dce6f4;border-radius:4px;background:#fff;box-shadow:0 5px 16px rgba(31,41,55,.04)}
+.equation-label{color:var(--accent-dark);font-size:.78rem;font-weight:750}
+.formula{overflow-x:auto;margin:14px 0 15px;padding:6px 0;color:#173b71;font-family:"Cambria Math","STIX Two Math","Times New Roman",serif;font-size:clamp(1.08rem,1.8vw,1.46rem);line-height:1.65;white-space:nowrap}
+.formula sub,.formula sup{font-size:.62em}
+.equation-panel p{color:var(--muted);font-size:.79rem;line-height:1.75}
+.detail-support-figure{margin-top:28px;padding:18px;border:1px solid var(--line);border-radius:4px;background:#fff}
+.detail-support-figure img{width:100%;height:auto;object-fit:contain}
+.detail-support-figure figcaption{margin-top:9px;color:var(--muted);font-size:.78rem;text-align:center}
 @media(max-width:760px){
   .hero-video-caption{padding-bottom:24px}
   .detail-page{margin-top:18px}
@@ -127,6 +138,7 @@ section{scroll-margin-top:84px}
   .detail-sections{grid-template-columns:1fr;gap:13px}
   .detail-sections:has(.detail-block:nth-child(2):last-child){grid-template-columns:1fr}
   .detail-figure{padding:10px}
+  .method-section{grid-template-columns:1fr;gap:20px;padding:24px 20px}
 }
 @media(max-width:650px){
   .real-scene-grid{grid-template-columns:1fr}
